@@ -60,15 +60,14 @@ function LoginPage() {
               </Button>
             </Card>
             <Card className={classes.signUpCard}>
-              <Typography algin="right" variant="caption">
+              <Typography algin="right" variant="body1">
                   Don't have an account?
-                  {" "}
-                  <Link to="/accounts/emailsignup">
-                  <Typography color="primary" variant="caption" component="span">
-                        Sign up
-                  </Typography>
-                  </Link>
               </Typography>
+              <Link to="/accounts/emailsignup">
+                  <Button color="primary" className={classes.signUpButton}>
+                        Sign up
+                  </Button>
+                  </Link>
             </Card>
         </article>
       </section>
@@ -76,13 +75,13 @@ function LoginPage() {
   );
 }
 
-export function LoginWithFacebook({color, iconColor}){
+export function LoginWithFacebook({color, iconColor, variant}){
   const classes = useLoginPageStyles();
 
   const facebookIcon = iconColor === 'blue' ? FacebookIconBlue : FacebookIconWhite 
 
   return (
-    <Button fullWidth color={color}>
+    <Button fullWidth color={color} variant={variant}>
       <img 
       src={facebookIcon} 
       alt="facebook icon"
